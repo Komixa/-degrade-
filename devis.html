@@ -31,8 +31,17 @@
 								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
 								<h2 style="text-align: center;">Estimez votre devis</h2>
                                 <form action="#" method="POST">
-                                    <label for="nom">Nom :</label>
-                                    <input type="text" id="nom" name="nom" placeholder="NOM"><br><br>
+                                    <label for="nom">Nom du client (ou société) :</label>
+                                    <input type="text" id="nom" name="nom" placeholder="DUPONT, MARIE..."><br><br>
+
+                                    <label for="type">Type du client :</label>
+                                    <select name="type" id="type">
+                                        <option value="">--Choisissez une option--</option>
+                                        <option value="PME">PME</option>
+                                        <option value="Artisan">Artisan</option>
+                                        <option value="Association">Association</option>
+                                        <option value="Autre">Autre</option>
+                                    </select>
                                 
                                     <label for="tel">Téléphone :</label>
                                     <input type="text" id="tel" name="tel" placeholder="01 23 45 67 89"><br><br>
@@ -42,9 +51,6 @@
                                 
                                     <label for="code">Code postal :</label>
                                     <input type="text" id="code" name="code" placeholder="12300"><br><br>
-                                
-                                    <label for="surface">Surface</label>
-                                    <input type="text" id="surface" name="surface" placeholder="---"><br><br>
                                 
                                     <input type="submit" value="Votre estimation" class="submit" >
                                 </form>
