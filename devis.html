@@ -30,7 +30,7 @@
 							<section id="content" class="main">
 								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
 								<h2 style="text-align: center;">Estimez votre devis</h2>
-                                <form action="#" method="POST">
+                                <form><!-- action="#" method="POST" -->
                                     <label for="nom">Nom du client (ou société) :</label>
                                     <input type="text" id="nom" name="nom" placeholder="DUPONT, MARIE..."><br><br>
 
@@ -52,8 +52,11 @@
                                     <label for="code">Code postal :</label>
                                     <input type="text" id="code" name="code" placeholder="12300"><br><br>
                                 
-                                    <input type="submit" value="Votre estimation" class="submit" >
+                                    <!-- <input type="submit" value="Votre estimation" class="submit" > -->
+                                    <button onclick="estimer()"></button>
+
                                 </form>
+                                <h2 id="resultat"></h2>
                             </section>
 
 					</div>
@@ -98,6 +101,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script>
+                typeClient = document.getElementById("type");
+                res = document.getElementById("resultat");
+                function estimer() {
+                    const selectedValue = typeClient.value;
+                    if (selectedValue == "PME") {
+                        res.innerHTML = "8500€";
+                    } else if (selectedValue == "Artisan") {
+                        res.innerHTML = "7500€";
+                    } else if (selectedValue == "Association") {
+                        res.innerHTML = "6500€";
+                    } else {
+                        res.innerHTML = "A voir";
+                    }
+                }
+            </script>
 
 	</body>
 </html>
